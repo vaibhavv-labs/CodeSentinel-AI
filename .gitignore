@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env
+.env.local
+venv/
+backend/venv/
+__pycache__/
+backend/__pycache__/
+*.pyc
+*.log
+backend/codebert_finetuned_final/
