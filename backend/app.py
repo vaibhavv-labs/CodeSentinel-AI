@@ -421,5 +421,7 @@ Vulnerable Lines to Fix:
 
 print("Starting Flask server...")
 if __name__ == "__main__":
-    print("Running on http://0.0.0.0:7860")
-    app.run(host="0.0.0.0", port=7860, debug=False)
+    import os
+    port = int(os.environ.get("PORT", 7860))
+
+    app.run(host="0.0.0.0", port=port)
