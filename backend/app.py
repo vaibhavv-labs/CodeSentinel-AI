@@ -15,6 +15,10 @@ app = Flask(__name__)
 # Allow requests from anywhere (needed for Vercel frontend)
 CORS(app)
 
+@app.route("/")
+def home():
+    return {"message": "CodeTrust AI Backend Running Successfully"}
+
 
 # -------------------------------
 # Load GraphCodeBERT security model
