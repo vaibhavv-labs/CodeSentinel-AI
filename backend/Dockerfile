@@ -1,28 +1,24 @@
-FROM python:3.10-slim
+﻿FROM python:3.11-slim
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y curl git zstd && rm -rf /var/lib/apt/lists/*
-
-# Install Ollama
-RUN curl -fsSL https://ollama.com/install.sh | sh
-
-# Set working directory
 WORKDIR /app
 
-# Copy requirements
 COPY requirements.txt .
-
-# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all project files
 COPY . .
 
-# Make start script executable
-RUN chmod +x start.sh
+# Download model at build time
+RUN python -c "
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import os
+model_name = 'mrm8488/codebert-base-finetuned-detect-insecure-code'
+t = AutoTokenizer.from_pretrained(model_name)
+m = AutoModelForSequenceClassification.from_pretrained(model_name)
+t.save_pretrained('./codebert_finetuned_final')
+m.save_pretrained('./codebert_finetuned_final')
+print('Model ready!')
+"
 
-# Hugging Face port
 EXPOSE 7860
 
-# Start backend
-CMD ["./start.sh"]
+CMD ["python", "app.py"]
