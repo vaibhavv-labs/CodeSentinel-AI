@@ -255,7 +255,7 @@ export default function AnalyzePage() {
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
                         spellCheck={false}
-                        className="w-full min-w-max overflow-x-auto whitespace-pre font-mono"
+                        className="w-full min-w-max overflow-auto whitespace-pre font-mono touch-pan-x touch-pan-y select-text"
                     <pre className="absolute inset-0 py-4 sm:py-6 pr-4 sm:pr-6 pl-4 sm:pl-6 font-mono text-sm leading-relaxed pointer-events-none overflow-auto">
                         <code className="block w-full">
                             {code.split('\n').map((line, i) => {
