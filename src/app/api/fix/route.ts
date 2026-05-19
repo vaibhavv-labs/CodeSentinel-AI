@@ -78,7 +78,7 @@ export async function POST(req: Request) {
         }
 
         // 1. Define the API URL exactly ONCE
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://shaiiiikh1305-backend.hf.space";
+        const apiUrl = process.env.FLASK_API_URL || "https://shaiiiikh1305-backend.hf.space";
         
         // 2. Send the code and vulnerabilities to the ML Backend
         const flaskResponse = await fetch(`${apiUrl}/fix`, {
