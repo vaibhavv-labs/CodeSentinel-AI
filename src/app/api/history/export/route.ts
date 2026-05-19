@@ -67,7 +67,7 @@ export async function GET() {
       });
     };
 
-    drawText("CodeTrust Forensic Report", marginX, cursorY, true, 18);
+    drawText("CodeSentinel Forensic Report", marginX, cursorY, true, 18);
     cursorY -= lineHeight + 8;
     drawText(`Generated: ${new Date().toISOString()}`, marginX, cursorY, false, 10);
     cursorY -= lineHeight;
