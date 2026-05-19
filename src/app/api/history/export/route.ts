@@ -100,7 +100,7 @@ export async function GET() {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename=codetrust-forensic-report-${Date.now()}.pdf`,
+        "Content-Disposition": `attachment; filename=codesentinel-forensic-report-${Date.now()}.pdf`,
       },
     });
   } catch (error) {
