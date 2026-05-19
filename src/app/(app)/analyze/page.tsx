@@ -249,14 +249,13 @@ export default function AnalyzePage() {
                 </div>
 
                 {/* Editor Area with Dynamic Highlighting */}
-                <div className="flex-1 relative overflow-hidden group min-h-[340px]">
+               <div className="flex-1 relative overflow-x-auto overflow-y-auto group min-h-[340px] w-full">
                     <textarea
                         ref={textAreaRef}
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
                         spellCheck={false}
-                        className="absolute inset-0 w-full h-full py-4 sm:py-6 pr-4 sm:pr-6 pl-14 sm:pl-[4.5rem] bg-transparent text-transparent caret-white font-mono text-sm leading-relaxed resize-none focus:outline-none z-10"
-                    />
+                        className="w-full min-w-max overflow-x-auto whitespace-pre font-mono"
                     <pre className="absolute inset-0 py-4 sm:py-6 pr-4 sm:pr-6 pl-4 sm:pl-6 font-mono text-sm leading-relaxed pointer-events-none overflow-auto">
                         <code className="block w-full">
                             {code.split('\n').map((line, i) => {
