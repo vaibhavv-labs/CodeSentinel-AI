@@ -258,7 +258,8 @@ export default function AnalyzePage() {
                             WebkitOverflowScrolling: "touch",
                             touchAction: "pan-x pan-y",
                         }}
-                        className="w-full min-w-max overflow-auto whitespace-pre font-mono touch-pan-x touch-pan-y select-text"
+                        className="w-full h-full overflow-auto whitespace-pre font-mono select-text bg-transparent text-transparent caret-white resize-none outline-none p-4 sm:p-6"
+                              />
                     <pre className="absolute inset-0 py-4 sm:py-6 pr-4 sm:pr-6 pl-4 sm:pl-6 font-mono text-sm leading-relaxed pointer-events-none overflow-auto">
                         <code className="block w-full">
                             {code.split('\n').map((line, i) => {
