@@ -1,37 +1,36 @@
-import NextAuth from "next-auth";
-import { authConfig } from "./auth.config"; 
+﻿import NextAuth from "next-auth";
+import { authConfig } from "./auth.config";
 import { NextResponse } from "next/server";
 import type { NextAuthRequest } from "next-auth";
-
 const { auth } = NextAuth(authConfig);
-
 export default auth((req: NextAuthRequest) => {
   const isLoggedIn = !!req.auth;
   const { pathname } = req.nextUrl;
 
-  // 1. ALWAYS allow NextAuth internal APIs
   if (pathname.startsWith("/api/auth")) {
     return NextResponse.next();
   }
 
-  // 2. Public routes (Add any other public pages here, like /register)
-  const isPublicRoute = pathname === "/login" || pathname === "/register" || pathname === "/";
-
-  // 3. Redirect logic
-  if (pathname.startsWith("/dashboard") && !isLoggedIn) {
-    // Protect dashboard: if not logged in, go to login
-    return NextResponse.redirect(new URL("/login", req.url));
+  // Homepage always accessible
+  if (pathname === "/") {
+    return NextResponse.next();
   }
 
-  if (isPublicRoute && isLoggedIn) {
-    // If already logged in, don't let them stay on login page, send to dashboard
+  const isAuthRoute = pathname === "/login" || pathname === "/signup" || pathname === "/forgot-password";
+  const isProtectedRoute = pathname.startsWith("/dashboard") || pathname.startsWith("/analyze") || pathname.startsWith("/history") || pathname.startsWith("/reports") || pathname.startsWith("/settings") || pathname.startsWith("/support");
+
+  // Logged in user — don't show login/signup
+  if (isAuthRoute && isLoggedIn) {
     return NextResponse.redirect(new URL("/dashboard", req.url));
+  }
+
+  // Not logged in — protect dashboard etc
+  if (isProtectedRoute && !isLoggedIn) {
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 
   return NextResponse.next();
 });
-
 export const config = {
-  // This matcher ensures the middleware runs on almost all paths
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
