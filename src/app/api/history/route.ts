@@ -35,7 +35,7 @@ export async function GET() {
             return {
                 id: `SCN-${scan.id.substring(scan.id.length - 4).toUpperCase()}`,
                 realId: scan.id,
-                project: 'CodeTrust Scan', // Defaulting since repo name isn't in DB schema
+                project: 'CodeSentinel Scan', // Defaulting since repo name isn't in DB schema
                 branch: 'main',
                 status: 'Completed',
                 risk,
