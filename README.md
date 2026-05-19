@@ -1,1 +1,1 @@
-# CodeTrust-AI
+CodeSentinel-AI
