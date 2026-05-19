@@ -6,7 +6,7 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CodeTrust AI - Trust & Verify AI-Generated Code",
+  title: "CodeSentinel AI - Trust & Verify AI-Generated Code",
   description: "Enterprise-grade AI cybersecurity platform",
 };
 
