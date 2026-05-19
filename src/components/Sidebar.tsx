@@ -38,7 +38,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                     </div>
                     <div>
                         <h1 className="text-xl font-black text-foreground tracking-tighter">
-                            CodeTrust <span className="gradient-text">AI</span>
+                            CodeSentinel <span className="gradient-text">AI</span>
                         </h1>
                     </div>
                 </Link>
