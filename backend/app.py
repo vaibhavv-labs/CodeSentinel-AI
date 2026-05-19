@@ -26,17 +26,6 @@ def home():
 
 print("Loading GraphCodeBERT scanner into memory...")
 
-# Auto-download model if not present
-MODEL_PATH_CHECK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "codebert_finetuned_final")
-if not os.path.exists(MODEL_PATH_CHECK) or not os.listdir(MODEL_PATH_CHECK):
-    print("Model not found. Downloading from HuggingFace...")
-    from transformers import AutoTokenizer, AutoModelForSequenceClassification as AMSC
-    _t = AutoTokenizer.from_pretrained("mrm8488/codebert-base-finetuned-detect-insecure-code")
-    _m = AMSC.from_pretrained("mrm8488/codebert-base-finetuned-detect-insecure-code")
-    os.makedirs(MODEL_PATH_CHECK, exist_ok=True)
-    _t.save_pretrained(MODEL_PATH_CHECK)
-    _m.save_pretrained(MODEL_PATH_CHECK)
-    print("Model downloaded successfully!")
 
 # Use the directory where app.py is located
 MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -441,4 +430,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
 
     app.run(host="0.0.0.0", port=port)
+
 
