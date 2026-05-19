@@ -1,5 +1,5 @@
 'use client';
-
+import CodeEditor from "@/components/CodeEditor";
 import { useState, useRef } from 'react';
 import { Play, FileCode, AlertCircle, Sparkles, CheckCircle2, RotateCcw, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -248,50 +248,12 @@ export default function AnalyzePage() {
                     </div>
                 </div>
 
-                {/* Editor Area with Dynamic Highlighting */}
-               <div className="flex-1 relative overflow-x-auto overflow-y-auto group min-h-[340px] w-full">
-                    <textarea
-                        ref={textAreaRef}
-                        value={code}
-                        onChange={(e) => setCode(e.target.value)}
-                        style={{
-                            WebkitOverflowScrolling: "touch",
-                            touchAction: "pan-x pan-y",
-                        }}
-                        className="w-full h-full overflow-auto whitespace-pre font-mono select-text bg-transparent text-transparent caret-white resize-none outline-none p-4 sm:p-6"
-                              />
-                    <pre className="absolute inset-0 py-4 sm:py-6 pr-4 sm:pr-6 pl-4 sm:pl-6 font-mono text-sm leading-relaxed pointer-events-none overflow-auto">
-                        <code className="block w-full">
-                            {code.split('\n').map((line, i) => {
-                                const lineNum = i + 1;
-                                const flaggedIssue = scanResults.find(r => r.line_number === lineNum && r.label !== 1);
-
-                                let highlightClass = '';
-                                if (analyzed && flaggedIssue) {
-                                    highlightClass = flaggedIssue.label === 0
-                                        ? 'bg-red-500/20 border-l-2 border-red-500'
-                                        : 'bg-yellow-500/20 border-l-2 border-yellow-500';
-                                }
-
-                                return (
-                                    <div key={i} className={`flex w-full ${highlightClass}`}>
-                                        <span className="text-gray-600 w-12 flex-shrink-0 text-right pr-4 select-none italic">{lineNum}</span>
-                                        <span className="text-gray-400 whitespace-pre">
-                                            {line.match(/(\s+|\S+)/g)?.map((word, j) => {
-                                                const isKeyword = ['import', 'from', 'def', 'async', 'return', 'class', 'try', 'except'].includes(word.trim());
-                                                const isFunction = word.includes('(');
-                                                return <span key={j} className={isKeyword ? 'text-purple-400' : isFunction ? 'text-yellow-300' : 'text-blue-300'}>{word}</span>;
-                                            }) || line}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </code>
-                    </pre>
-                </div>
-            </div>
-
-            {/* Dynamic Results Panel */}
+                <CodeEditor
+                     value={code}
+                    onChange={setCode}
+                    language={selectedLang}
+                    minHeight={340}
+                    />
             <div className="w-full lg:w-[420px] flex flex-col bg-background/80 backdrop-blur-xl border-t lg:border-t-0 lg:border-l border-card-border min-h-[300px] lg:h-auto overflow-auto z-10">
                 <div className="h-14 glass border-b border-card-border px-4 sm:px-6 flex items-center justify-between flex-shrink-0">
                     <h2 className="font-bold tracking-tight">AI Audit Results</h2>
