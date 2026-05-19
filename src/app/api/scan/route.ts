@@ -41,7 +41,7 @@ export async function POST(req: Request) {
         }
 
         // 1. Send code to local Flask ML Backend
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:7860";
+        const apiUrl = process.env.FLASK_API_URL || "http://127.0.0.1:7860";
         console.log(`Forwarding scan request to: ${apiUrl}/scan`);
         
         const flaskResponse = await fetch(`${apiUrl}/scan`, {
