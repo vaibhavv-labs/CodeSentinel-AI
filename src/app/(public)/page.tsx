@@ -71,7 +71,7 @@ export default function LandingPage() {
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
             <Shield className="w-5 h-5 text-white" />
           </div>
-          <span className="text-lg font-black tracking-tight">CodeTrust <span className="gradient-text">AI</span></span>
+          <span className="text-lg font-black tracking-tight">CodeSentinel <span className="gradient-text">AI</span></span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-secondary">
@@ -167,7 +167,7 @@ export default function LandingPage() {
                   <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 border-2 border-[#0A0F1E] flex items-center justify-center text-[9px] font-black text-white">{l}</div>
                 ))}
               </div>
-              <span className="text-xs font-bold">10,000+ developers trust CodeTrust AI</span>
+              <span className="text-xs font-bold">10,000+ developers trust CodeSentinel AI</span>
             </div>
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />)}
@@ -330,7 +330,7 @@ export default function LandingPage() {
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-secondary text-lg mb-10 max-w-2xl mx-auto">
-            Join 10,000+ developers who trust CodeTrust AI to keep their code bulletproof.
+            Join 10,000+ developers who trust CodeSentinel AI to keep their code bulletproof.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -351,7 +351,7 @@ export default function LandingPage() {
                 <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/20">
                   <Shield className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-base font-black">CodeTrust <span className="gradient-text">AI</span></span>
+                <span className="text-base font-black">CodeSentinel <span className="gradient-text">AI</span></span>
               </Link>
               <p className="text-secondary text-sm leading-relaxed">AI-powered code vulnerability detection and auto-remediation for modern development teams.</p>
             </div>
@@ -373,7 +373,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-secondary">© 2025 CodeTrust AI. All rights reserved.</p>
+            <p className="text-xs text-secondary">© 2025 CodeSentinel AI. All rights reserved.</p>
             <p className="text-xs text-secondary">Built with ❤️ for developers who care about security</p>
           </div>
         </div>
