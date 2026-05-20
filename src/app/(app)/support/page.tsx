@@ -11,7 +11,7 @@ export default function SupportPage() {
     const [submitted, setSubmitted] = useState(false);
 
     const faqs = [
-        { q: "How does Neural Pattern Matching work?", a: "CodeTrust AI uses advanced LLMs fine-tuned on security forensic data to identify patterns that traditional static analysis tools miss, specifically looking for business logic flaws and multi-file vulnerabilities." },
+        { q: "How does Neural Pattern Matching work?", a: "CodeSentinel AI uses advanced LLMs fine-tuned on security forensic data to identify patterns that traditional static analysis tools miss, specifically looking for business logic flaws and multi-file vulnerabilities." },
         { q: "Can I integrate with my local CI/CD pipeline?", a: "Yes, we provide a robust CLI and specialized GitHub Actions/GitLab Runners that can trigger neural scans on every pull request." },
         { q: "What languages are currently supported?", a: "We officially support Python, JavaScript, TypeScript, Go, Java, and Rust. Experimental support for C++ and Swift is available for Enterprise users." },
         { q: "Is my source code stored on your servers?", a: "No. We utilize local-first processing where possible. For neural analysis, code snippets are processed in memory and immediately purged post-audit. We are SOC2 Type II compliant." },
@@ -138,7 +138,7 @@ export default function SupportPage() {
                                     </div>
                                     <div className="space-y-1.5">
                                         <label className="text-[10px] text-secondary font-black uppercase tracking-widest px-1">Forensic Email</label>
-                                        <input required type="email" placeholder="arivera@codetrust.ai" className="w-full px-5 py-3 bg-background/50 border border-card-border rounded-xl focus:outline-none focus:border-primary/50 transition-all font-bold text-sm" />
+                                        <input required type="email" placeholder="arivera@cCodeSentinel.ai" className="w-full px-5 py-3 bg-background/50 border border-card-border rounded-xl focus:outline-none focus:border-primary/50 transition-all font-bold text-sm" />
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
@@ -188,13 +188,13 @@ export default function SupportPage() {
             <div className="pt-12 border-t border-card-border flex flex-col items-center justify-center gap-6 relative z-10 text-center opacity-60">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
                     <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-foreground transition-colors cursor-pointer">
-                        <Mail className="w-4 h-4 text-primary" /> infra@codetrust.ai
+                        <Mail className="w-4 h-4 text-primary" /> infra@CodeSentinel.ai
                     </div>
                     <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-foreground transition-colors cursor-pointer">
                         <Phone className="w-4 h-4 text-primary" /> +1 (888) NEURAL-AI
                     </div>
                 </div>
-                <p className="text-[9px] text-secondary/50 font-bold uppercase tracking-[0.3em]">CodeTrust AI Security Operations Center (SOC) - GLOBAL INTERCEPT</p>
+                <p className="text-[9px] text-secondary/50 font-bold uppercase tracking-[0.3em]">CodeSentinel AI Security Operations Center (SOC) - GLOBAL INTERCEPT</p>
             </div>
         </div>
     );
