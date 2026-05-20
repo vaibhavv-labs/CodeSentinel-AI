@@ -17,7 +17,7 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return {"message": "CodeTrust AI Backend Running Successfully"}
+    return {"message": "CodeSentinel AI Backend Running Successfully"}
 
 
 # -------------------------------
