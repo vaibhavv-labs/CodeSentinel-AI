@@ -24,7 +24,7 @@ export default function AuthLayout({
                     <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
                         <Shield className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-xl font-bold tracking-tight">CodeTrust <span className="gradient-text">AI</span></span>
+                    <span className="text-xl font-bold tracking-tight">CodeSentinel <span className="gradient-text">AI</span></span>
                 </Link>
             </header>
 
@@ -43,7 +43,7 @@ export default function AuthLayout({
             {/* Footer */}
             <footer className="relative z-10 p-4 sm:p-6 md:p-8 text-center">
                 <p className="text-xs text-secondary">
-                    © 2024 CodeTrust AI. Secured by Enterprise-Grade Encryption.
+                    © 2026 CodeSentinel AI. Secured by Enterprise-Grade Encryption.
                 </p>
             </footer>
         </div>
