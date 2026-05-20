@@ -89,7 +89,7 @@ export default function HistoryPage() {
 
             const contentDisposition = res.headers.get('Content-Disposition');
             const fileNameMatch = contentDisposition?.match(/filename=([^;]+)/i);
-            const fileName = fileNameMatch?.[1]?.replace(/"/g, '') || `codetrust-forensic-report-${Date.now()}.pdf`;
+            const fileName = fileNameMatch?.[1]?.replace(/"/g, '') || `CodeSentinel-forensic-report-${Date.now()}.pdf`;
 
             a.download = fileName;
             document.body.appendChild(a);
