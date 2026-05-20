@@ -8,6 +8,17 @@ export const authConfig = {
     signIn: "/login",
   },
   callbacks: {
+    async authorized({ auth, request: { nextUrl } }) {
+      const isLoggedIn = !!auth?.user;
+      const protectedRoutes = ["/dashboard", "/analyze", "/history", "/reports", "/settings"];
+      const isProtected = protectedRoutes.some(route => nextUrl.pathname.startsWith(route));
+
+      if (isProtected && !isLoggedIn) return false;
+      if (isLoggedIn && (nextUrl.pathname === "/login" || nextUrl.pathname === "/signup")) {
+        return Response.redirect(new URL("/dashboard", nextUrl));
+      }
+      return true;
+    },
     async jwt({ token, user, trigger, session }) {
       if (user) {
         token.id = user.id;
