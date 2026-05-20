@@ -91,7 +91,7 @@ function SettingsContent() {
             const res = await fetch('/api/keys', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: `CodeTrust Interface ${apiKeys.length + 1}` })
+                body: JSON.stringify({ name: `CodeSentinel Interface ${apiKeys.length + 1}` })
             });
             
             if (res.ok) {
@@ -355,7 +355,7 @@ function SettingsContent() {
 
                             {activeTab === 'notifications' && (
                                 <div className="space-y-8">
-                                    <p className="text-sm text-secondary font-medium leading-relaxed">Choose how CodeTrust AI communicates critical forensic findings to your team.</p>
+                                    <p className="text-sm text-secondary font-medium leading-relaxed">Choose how CodeSentinel AI communicates critical forensic findings to your team.</p>
                                     <div className="space-y-4">
                                         {[
                                             { title: 'Slack Intercepts', desc: 'Instant audit reports in your security channel.', active: true },
