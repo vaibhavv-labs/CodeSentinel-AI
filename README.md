@@ -15,6 +15,8 @@
 
 <br/>
 
+### 🔗 [Try Live Demo →](https://codesentinel-app.vercel.app)
+
 </div>
 
 ---
