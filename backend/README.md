@@ -1,5 +1,5 @@
 ---
-title: CodeTrust Backend
+title: CodeSentinel Backend
 emoji: 🚀
 colorFrom: blue
 colorTo: purple
