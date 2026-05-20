@@ -14,7 +14,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
     const resetLink = `${domain}/reset-password?token=${token}`;
 
     await transporter.sendMail({
-        from: `"CodeTrust Support" <${process.env.EMAIL_USER}>`,
+        from: `"CodeSentinel Support" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: "Reset your password",
         html: `
@@ -31,7 +31,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
         </p>
         <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 32px 0;" />
         <p style="color: #9ca3af; font-size: 12px;">
-          Sent by CodeTrust Dashboard.
+          Sent by CodeSentinel Dashboard.
         </p>
       </div>
     `,
