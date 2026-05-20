@@ -15,8 +15,6 @@
 
 <br/>
 
-![CodeSentinel AI Banner](https://codesentinel-app.vercel.app/og-image.png)
-
 </div>
 
 ---
@@ -75,7 +73,7 @@ Secure Code + Detailed Report
 ### Backend
 - **Flask** — REST API server
 - **CodeBERT** — Fine-tuned vulnerability detection model
-- **Qwen 2.5 Coder 1.5B** — LLM for auto-fix via Ollama
+- **Qwen 2.5 Coder 1.5B** — LLM for auto-fix via Gemini
 - **Transformers** — HuggingFace model pipeline
 - **PyTorch** — ML inference
 
@@ -230,14 +228,14 @@ CodeSentinel-AI/
 
 | Name | Role |
 |---|---|
-| **Vaibhav Bhoyate** | AI/ML Engineering — CodeBERT fine-tuning, Flask backend, model deployment |
-| **Anjali Tripathi** | Full Stack — Next.js frontend, database, authentication |
+| **Vaibhav Bhoyate** | AI/ML Engineering — CodeBERT fine-tuning, Flask backend, database, model deployment |
+| **Anjali Tripathi** | Full Stack — Next.js frontend, authentication |
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License 
 
 ---
 
