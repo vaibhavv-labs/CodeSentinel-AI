@@ -138,7 +138,7 @@ export default function Dashboard() {
             const a = document.createElement('a');
             a.href = url;
             const cd = res.headers.get('Content-Disposition');
-            a.download = cd?.match(/filename=([^;]+)/i)?.[1]?.replace(/"/g, '') || `codetrust-report-${Date.now()}.pdf`;
+            a.download = cd?.match(/filename=([^;]+)/i)?.[1]?.replace(/"/g, '') || `CodeSentinel-report-${Date.now()}.pdf`;
             document.body.appendChild(a); a.click(); a.remove();
             window.URL.revokeObjectURL(url);
         } catch { alert('Download failed. Please try again.'); }
