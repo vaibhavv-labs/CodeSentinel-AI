@@ -1,4 +1,5 @@
 import type { AuthConfig } from "@auth/core";
+
 export const authConfig = {
   session: {
     strategy: "jwt",
@@ -39,9 +40,9 @@ export const authConfig = {
       return session;
     },
     async redirect({ url, baseUrl }) {
-      if (url.startsWith("/")) return ${baseUrl}${url};
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
       if (new URL(url).origin === baseUrl) return url;
-      return baseUrl + "/dashboard";
+      return `${baseUrl}/dashboard`;
     },
   },
   providers: [],
